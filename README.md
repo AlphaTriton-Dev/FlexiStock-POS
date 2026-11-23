@@ -1,29 +1,29 @@
 # FlexiStock POS
 
-A configurable point-of-sale and inventory app for small stores. Owners can rename the system, turn features on or off (expiry tracking, credit, returns, tax, multiple units), and give each staff role only the permissions it needs.
+A configurable point-of-sale and inventory app for small stores. Owners can rename the system, turn features on or off (expiry tracking, credit, returns, tax, multiple units and many more features on the next update), and give each staff role only the permissions it needs.
 
-**Members:** [Member name 1], [Member name 2]
+Members: Lanz P. Enciso, John Ian B. Dolor
 
 ## Project structure
 ```
 flexistock-pos/
-├── README.md
-├── database/
-│   ├── schema.sql        CREATE TABLE statements, triggers, procedures, views (28 tables)
-│   └── seed.sql          INSERT sample data
-├── docs/
-│   ├── 01-brief.md
-│   ├── 02-crud-map.md
-│   ├── 03-sitemap.png
-│   ├── 03-user-flow.png
-│   ├── 04-wireframes/    one image per screen
-│   ├── 05-style-guide.md
-│   └── 05-style-guide.png
-└── prototype/
-    ├── css/style.css     shared stylesheet (style-guide variables at the top)
-    ├── index.html        landing page (extra, placeholders for download and Google sign-in)
-    ├── list.html         Products list
-    └── form.html         Add product form
+|- README.md
+|- database/
+|   |-- schema.sql        CREATE TABLE statements, triggers, procedures, views (28 tables)
+|   |-- seed.sql          INSERT sample data
+|- docs/
+|   |-- 01-brief.md
+|   |-- 02-crud-map.md
+|   |-- 03-sitemap.png
+|   |-- 03-user-flow.png
+|   |-- 04-wireframes/    one image per screen
+|   |-- 05-style-guide.md
+|   |-- 05-style-guide.png
+|- prototype/   
+    |-- css/style.css     shared stylesheet (style-guide variables at the top)
+    |-- index.html        landing page (extra, placeholders for download and Google sign-in)
+    |-- list.html         Products list
+    |-- form.html         Add product form
 ```
 
 ## Database setup
