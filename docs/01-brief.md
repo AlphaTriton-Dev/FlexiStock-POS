@@ -4,11 +4,12 @@
 Small store owners (grocery, hardware, pharmacy) still write receipts by hand and record stock in and out on paper. This wastes time, causes counting mistakes, and makes it hard to know the day's sales, profit, and what is running low. Existing POS apps are fixed: owners cannot turn off features they do not need, such as expiry tracking for a hardware store.
 
 ## 2. Users and what they need to do
-| User role | What they need to do in the app |
-|-----------|---------------------------------|
-| Visitor (guest) | Read about FlexiStock on the landing page, download the app, sign in |
-| Owner | Manage products, suppliers, and customers. Turn modules on or off. Create roles and staff accounts. View sales, profit, and stock reports |
-| Staff (custom role) | Do only what the owner's permissions allow, e.g. process sales, receive stock, or record returns |
+| User role           | What they need to do in the app                                                                               |
+|---------------------|---------------------------------------------------------------------------------------------------------------|
+| Visitor (guest)     | Read about FlexiStock on the landing page, download the app, sign in                                          |
+| Owner               | Manage products, suppliers, and customers. Turn modules on or off. Create roles and staff accounts.           | 
+|                     | View sales, profit, and stock reports                                                                         |
+| Staff (custom role) | Do only what the owner's permissions allow, e.g. process sales, receive stock, or record returns              |
 
 ## 3. The database behind it
 Database: `flexistock_pos`, 28 tables (MySQL).
@@ -56,7 +57,8 @@ Database: `flexistock_pos`, 28 tables (MySQL).
 - Process returns and refunds
 - Dashboard with today's sales, profit, and low-stock items
 - Sign in with Google on the website, with sales data shown online (placeholder this week)
+- An AI assistant to help the user to whatever they need within the system
 
 ## 6. Similar apps I looked at
-- Loyverse POS: idea to borrow: [write what you actually noticed]
-- Square POS: idea to borrow: [write what you actually noticed]
+- Loyverse POS: idea to borrow: the one idea i borrowed was their functions that was in their POS for example was the connect to a reciept printer
+- Square POS: idea to borrow: the idea i plan to borrow on the next update is an AI assistant
