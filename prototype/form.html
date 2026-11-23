@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add product | FlexiStock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">FlexiStock</a>
+      <nav class="nav" aria-label="Main menu">
+        <a href="#">Dashboard</a>
+        <a href="#">Sales</a>
+        <a href="list.html" aria-current="page">Products</a>
+        <a href="#">Stock</a>
+        <a href="#">Purchasing</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Customers</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <span class="muted">FlexiStock Demo Store</span>
+        <span>Signed in: <strong>Demo Owner</strong> &middot; <a href="index.html">Logout</a></span>
+      </header>
+      <main class="content">
+        <p class="breadcrumb"><a href="list.html">Products</a> &rsaquo; Add product</p>
+        <div class="page-head">
+          <div>
+            <h1>Add product</h1>
+            <p class="muted">Fields marked * are required.</p>
+          </div>
+        </div>
+
+        <!-- name="..." matches the column in the product table, so PHP can read $_POST['sku'] in Week 15 -->
+        <form class="form" action="#" method="post">
+          <div class="form-grid">
+            <div>
+              <label for="category_id">Category *</label>
+              <select id="category_id" name="category_id" required aria-invalid="true" aria-describedby="category_id-error">
+                <option value="">Choose one</option>
+                <option value="1">Groceries</option>
+                <option value="2">Beverages</option>
+                <option value="3">Medicines</option>
+                <option value="4">Hardware</option>
+                <option value="5">Household</option>
+              </select>
+              <!-- sample error message -->
+              <p class="error" id="category_id-error">&#9888; Please choose a category.</p>
+            </div>
+
+            <div>
+              <label for="base_unit_id">Base unit *</label>
+              <select id="base_unit_id" name="base_unit_id" required>
+                <option value="">Choose one</option>
+                <option value="1">Piece</option>
+                <option value="2">Box</option>
+                <option value="3">Pack</option>
+                <option value="4">Kilogram</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="sku">SKU * <span class="hint">(unique, max 40)</span></label>
+              <input id="sku" name="sku" type="text" maxlength="40" required>
+            </div>
+
+            <div>
+              <label for="barcode">Barcode <span class="hint">(unique, max 50)</span></label>
+              <input id="barcode" name="barcode" type="text" maxlength="50">
+            </div>
+
+            <div class="full">
+              <label for="product_name">Product name *</label>
+              <input id="product_name" name="product_name" type="text" maxlength="120" required>
+            </div>
+
+            <div>
+              <label for="selling_price">Selling price (&#8369;) *</label>
+              <input id="selling_price" name="selling_price" type="number" min="0.01" step="0.01" required>
+            </div>
+
+            <div>
+              <label for="tax_rate_id">Tax rate</label>
+              <select id="tax_rate_id" name="tax_rate_id">
+                <option value="">No tax</option>
+                <option value="1">VAT 12%</option>
+                <option value="2">Zero-rated</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="reorder_level">Reorder level <span class="hint">(warn when stock falls to this)</span></label>
+              <input id="reorder_level" name="reorder_level" type="number" min="0" step="0.001" value="0">
+            </div>
+
+            <div class="check">
+              <input id="is_active" name="is_active" type="checkbox" value="1" checked>
+              <label for="is_active">Active (can be sold)</label>
+            </div>
+          </div>
+
+          <!-- product_unit rows: names use product_unit[n][column] -->
+          <fieldset>
+            <legend>Other ways to sell this product</legend>
+            <div class="form-grid">
+              <div>
+                <label for="pu_unit_id">Unit</label>
+                <select id="pu_unit_id" name="product_unit[0][unit_id]">
+                  <option value="">None</option>
+                  <option value="2">Box</option>
+                  <option value="3">Pack</option>
+                </select>
+              </div>
+              <div>
+                <label for="pu_factor">Base units per this unit <span class="hint">(e.g. 24)</span></label>
+                <input id="pu_factor" name="product_unit[0][conversion_factor]" type="number" min="0.0001" step="0.0001">
+              </div>
+              <div>
+                <label for="pu_price">Price for this unit (&#8369;)</label>
+                <input id="pu_price" name="product_unit[0][selling_price]" type="number" min="0.01" step="0.01">
+              </div>
+            </div>
+            <p style="margin-top:1rem"><button class="btn-secondary btn-small" type="button">+ Add another unit</button></p>
+          </fieldset>
+
+          <!-- product_custom_value rows: one per custom_field -->
+          <fieldset>
+            <legend>Extra fields</legend>
+            <div class="form-grid">
+              <div>
+                <label for="cf_1">Brand</label>
+                <input id="cf_1" name="product_custom_value[1][field_value]" type="text" maxlength="255">
+              </div>
+              <div>
+                <label for="cf_2">Warranty (months)</label>
+                <input id="cf_2" name="product_custom_value[2][field_value]" type="number" min="0">
+              </div>
+              <div>
+                <label for="cf_3">Dosage</label>
+                <input id="cf_3" name="product_custom_value[3][field_value]" type="text" maxlength="255">
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Save</button>
+            <a href="list.html" class="btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

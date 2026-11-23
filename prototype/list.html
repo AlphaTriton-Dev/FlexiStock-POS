@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products | FlexiStock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">FlexiStock</a>
+      <nav class="nav" aria-label="Main menu">
+        <a href="#">Dashboard</a>
+        <a href="#">Sales</a>
+        <a href="list.html" aria-current="page">Products</a>
+        <a href="#">Stock</a>
+        <a href="#">Purchasing</a>
+        <a href="#">Suppliers</a>
+        <a href="#">Customers</a>
+        <a href="#">Settings</a>
+      </nav>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <span class="muted">FlexiStock Demo Store</span>
+        <span>Signed in: <strong>Demo Owner</strong> &middot; <a href="index.html">Logout</a></span>
+      </header>
+      <main class="content">
+        <p class="breadcrumb">Dashboard &rsaquo; Products</p>
+        <div class="page-head">
+          <div>
+            <h1>Products</h1>
+            <p class="muted">Items you sell. Stock is the sellable quantity across all batches.</p>
+          </div>
+          <a class="btn" href="form.html">+ Add product</a>
+        </div>
+
+        <!-- Search form: field names match the columns they filter -->
+        <form class="toolbar" action="#" method="get" role="search">
+          <div class="search">
+            <label for="q">Search</label>
+            <input id="q" name="q" type="search" placeholder="Name, SKU, or barcode">
+          </div>
+          <div>
+            <label for="category_id">Category</label>
+            <select id="category_id" name="category_id">
+              <option value="">All categories</option>
+              <option value="1">Groceries</option>
+              <option value="2">Beverages</option>
+              <option value="3">Medicines</option>
+              <option value="4">Hardware</option>
+              <option value="5">Household</option>
+            </select>
+          </div>
+          <div>
+            <label for="is_active">Status</label>
+            <select id="is_active" name="is_active">
+              <option value="">All</option>
+              <option value="1">Active</option>
+              <option value="0">Inactive</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>SKU</th><th>Product</th><th>Category</th><th>Unit</th>
+                <th class="num">Price</th><th class="num">Stock</th><th>Status</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td data-label="SKU">GRC-001</td>
+            <td data-label="Product"><strong>Instant Noodles Cup</strong></td>
+            <td data-label="Category">Groceries</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;18.00</td>
+            <td data-label="Stock" class="num">203 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">BEV-001</td>
+            <td data-label="Product"><strong>Bottled Water 500ml</strong></td>
+            <td data-label="Category">Beverages</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;15.00</td>
+            <td data-label="Stock" class="num">468 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">MED-001</td>
+            <td data-label="Product"><strong>Paracetamol 500mg Tablet</strong></td>
+            <td data-label="Category">Medicines</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;4.00</td>
+            <td data-label="Stock" class="num">1,955 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">MED-002</td>
+            <td data-label="Product"><strong>Vitamin C 500mg Tablet</strong></td>
+            <td data-label="Category">Medicines</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;6.50</td>
+            <td data-label="Stock" class="num">970 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">HW-001</td>
+            <td data-label="Product"><strong>Claw Hammer</strong></td>
+            <td data-label="Category">Hardware</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;250.00</td>
+            <td data-label="Stock" class="num">0 <span class="badge low">&#9888; Low stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">HW-002</td>
+            <td data-label="Product"><strong>Common Wire Nail 3 inch</strong></td>
+            <td data-label="Category">Hardware</td>
+            <td data-label="Unit">kg</td>
+            <td data-label="Price" class="num">&#8369;85.00</td>
+            <td data-label="Stock" class="num">0 <span class="badge low">&#9888; Low stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">HH-001</td>
+            <td data-label="Product"><strong>Laundry Detergent Bar</strong></td>
+            <td data-label="Category">Household</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;22.00</td>
+            <td data-label="Stock" class="num">17 <span class="badge low">&#9888; Low stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">GRC-002</td>
+            <td data-label="Product"><strong>White Sugar</strong></td>
+            <td data-label="Category">Groceries</td>
+            <td data-label="Unit">kg</td>
+            <td data-label="Price" class="num">&#8369;72.00</td>
+            <td data-label="Stock" class="num">48 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">GRC-003</td>
+            <td data-label="Product"><strong>Instant Coffee Sachet</strong></td>
+            <td data-label="Category">Groceries</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;7.00</td>
+            <td data-label="Stock" class="num">565 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td data-label="SKU">GRC-004</td>
+            <td data-label="Product"><strong>Canned Sardines 155g</strong></td>
+            <td data-label="Category">Groceries</td>
+            <td data-label="Unit">pc</td>
+            <td data-label="Price" class="num">&#8369;28.00</td>
+            <td data-label="Stock" class="num">109 <span class="badge ok">In stock</span></td>
+            <td data-label="Status"><span class="badge ok">Active</span></td>
+            <td class="actions">
+              <div class="btn-row">
+                <a class="btn-secondary btn-small" href="#">View</a>
+                <a class="btn-secondary btn-small" href="form.html">Edit</a>
+                <button class="btn-secondary btn-small btn-danger" type="button">Deactivate</button>
+              </div>
+            </td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span class="muted">Showing 1&ndash;10 of 10 products</span>
+          <span class="btn-row">
+            <a class="btn-secondary btn-small" href="#">&lsaquo; Prev</a>
+            <a class="btn-secondary btn-small" href="#">Next &rsaquo;</a>
+          </span>
+        </div>
+
+        <!-- Empty state (shown when the query returns 0 rows; hidden in this mock-up) -->
+        <div class="empty-state" hidden>
+          <h2>No products yet.</h2>
+          <p class="muted">Add the first one to start selling.</p>
+          <a class="btn" href="form.html">+ Add product</a>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
